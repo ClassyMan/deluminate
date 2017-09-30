@@ -164,8 +164,10 @@ function resetFullscreenWorkaroundHeight() {
     window.scrollY + window.innerHeight;
   var rightestVisiblePoint =
     window.scrollX + window.innerWidth;
-  fullscreen_workaround.style.height = lowestVisiblePoint + 'px';
-  fullscreen_workaround.style.width = rightestVisiblePoint + 'px';
+  // unsure whether commenting this out is a good idea long term but eh. Fixes
+  // scrollbar flicker
+  // fullscreen_workaround.style.height = lowestVisiblePoint + 'px';
+  // fullscreen_workaround.style.width = rightestVisiblePoint + 'px';
 
   // Yield to the renderer, then reset the size to the calculated region.
   setTimeout(() => {
